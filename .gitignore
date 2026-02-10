@@ -1,0 +1,8 @@
+venv/
+.venv/
+__pycache__/
+*.pth
+*.pt
+*.h5
+*.ckpt
+*.onnx

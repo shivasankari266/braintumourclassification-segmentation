@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Tumor Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('/static/uploads/brain_cells.jpg') no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(4px) brightness(0.8);
+            color: white;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00ffe1;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            padding: 8px;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            border: none;
+        }
+
+        input[type="submit"] {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #00ffe1;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00cccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h2>Brain Tumor MRI Classifier</h2>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
